@@ -128,7 +128,7 @@ const setBookmark = async bm => {
 }
 
 const getGistList = async () => {
-  let res = await window.fetch('https://api.github.com/gists', {
+  let res = await window.fetch('https://gitee.com/api/v5/gists', {
     method: 'GET',
     headers: {
       'Authorization': 'token ' + token
@@ -139,7 +139,7 @@ const getGistList = async () => {
 }
 
 const editGist = async (content, id) => {
-  let res = await window.fetch(`https://api.github.com/gists/${id}`, {
+  let res = await window.fetch(`https://gitee.com/api/v5/gists/${id}`, {
     method: 'PATCH',
     headers: {
       'Authorization': 'token ' + token
@@ -158,7 +158,7 @@ const editGist = async (content, id) => {
 }
 
 const createGist = async content => {
-  let res = await window.fetch('https://api.github.com/gists', {
+  let res = await window.fetch('https://gitee.com/api/v5/gists', {
     method: 'POST',
     headers: {
       'Authorization': 'token ' + token
@@ -177,7 +177,7 @@ const createGist = async content => {
 }
 
 const getGistHistory = async id => {
-  let res = await window.fetch(`https://api.github.com/gists/${id}/commits`, {
+  let res = await window.fetch(`https://gitee.com/api/v5/gists/${id}/commits`, {
     method: 'GET',
     headers: {
       'Authorization': 'token ' + token
@@ -188,7 +188,7 @@ const getGistHistory = async id => {
 }
 
 const getGistContent = async (id, sha = undefined) => {
-  let res = await window.fetch(`https://api.github.com/gists/${id}${sha ? '/' + sha : ''}`, {
+  let res = await window.fetch(`https://gitee.com/api/v5/gists/${id}${sha ? '/' + sha : ''}`, {
     method: 'GET',
     headers: {
       'Authorization': 'token ' + token
